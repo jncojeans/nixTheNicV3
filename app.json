@@ -11,14 +11,19 @@
     "backgroundColor": "#1a1a1a",
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.nixthenic.app",
+      "bundleIdentifier": "com.kevsjolinsched.nixthenic",
       "buildNumber": "2",
       "infoPlist": {
         "UIBackgroundModes": [
           "fetch",
           "remote-notification"
-        ]
-      }
+        ],
+        "ITSAppUsesNonExemptEncryption": false
+      },
+      "appleId": "kevsjolinsched@gmail.com",
+      "ascAppId": "6475963217",
+      "appleTeamId": "KKUW8X6QXT",
+      "jsEngine": "hermes"
     },
     "android": {
       "package": "com.nixthenic.app",
@@ -26,7 +31,11 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/icon.png",
         "backgroundColor": "#1a1a1a"
-      }
+      },
+      "permissions": [
+        "android.permission.RECEIVE_BOOT_COMPLETED",
+        "android.permission.WAKE_LOCK"
+      ]
     },
     "web": {
       "bundler": "metro",
@@ -47,7 +56,8 @@
         {
           "netCacheDirectory": "net_cache"
         }
-      ]
+      ],
+      "./plugins/withYogaFix"
     ],
     "experiments": {
       "typedRoutes": true

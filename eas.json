@@ -1,6 +1,7 @@
 {
   "cli": {
-    "version": ">= 5.9.1"
+    "version": ">= 5.9.1",
+    "appVersionSource": "remote"
   },
   "build": {
     "development": {
@@ -14,15 +15,40 @@
       }
     },
     "production": {
-      "autoIncrement": true
+      "autoIncrement": true,
+      "ios": {
+        "resourceClass": "m-medium",
+        "cache": {
+          "key": "ios-production-v3"
+        },
+        "image": "latest"
+      }
+    },
+    "production-yoga-fix": {
+      "extends": "production",
+      "ios": {
+        "buildConfiguration": "Release",
+        "image": "latest",
+        "env": {
+          "USE_HERMES": "1",
+          "OTHER_CFLAGS": "-Wno-incompatible-function-pointer-types -Wno-error=incompatible-function-pointer-types",
+          "SWIFT_VERSION": "5.0",
+          "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64",
+          "GCC_WARN_INHIBIT_ALL_WARNINGS": "YES",
+          "HERMES_ENABLE_BITCODE": "NO"
+        },
+        "cache": {
+          "key": "ios-production-yoga-fix-v5"
+        }
+      }
     }
   },
   "submit": {
     "production": {
       "ios": {
-        "appleId": "your-apple-id@example.com",
-        "ascAppId": "your-app-store-connect-app-id",
-        "appleTeamId": "your-apple-team-id"
+        "appleId": "kevsjolinsched@gmail.com",
+        "ascAppId": "6475963217",
+        "appleTeamId": "KKUW8X6QXT"
       }
     }
   }
