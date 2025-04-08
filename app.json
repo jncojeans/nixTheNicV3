@@ -1,0 +1,62 @@
+{
+  "expo": {
+    "name": "Nix the Nic",
+    "slug": "nixthenic",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "myapp",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "backgroundColor": "#1a1a1a",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.nixthenic.app",
+      "buildNumber": "2",
+      "infoPlist": {
+        "UIBackgroundModes": [
+          "fetch",
+          "remote-notification"
+        ]
+      }
+    },
+    "android": {
+      "package": "com.nixthenic.app",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/icon.png",
+        "backgroundColor": "#1a1a1a"
+      }
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "single",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/images/icon.png",
+          "color": "#1a1a1a"
+        }
+      ],
+      [
+        "expo-background-fetch",
+        {
+          "netCacheDirectory": "net_cache"
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "40517342-2c9d-41a8-8d96-464b79eef360"
+      }
+    },
+    "owner": "jncojeans"
+  }
+}
